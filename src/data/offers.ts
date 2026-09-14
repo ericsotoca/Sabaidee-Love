@@ -6,7 +6,7 @@ export const offerPlans: OfferPlan[] = [
     tier: 1,
     priceLak: 100000,
     priceEur: 4,
-    stripePaymentLinkDefault: 'https://buy.stripe.com/7sY00j3YH1fdfKIb8G1B601',
+    stripePaymentLinkDefault: 'https://buy.stripe.com/bJebJ152Lga7gOM7Wu1B604',
     lo: {
       name: 'ແພັກເກດທີ 1: ປັບແຕ່ງໂປຣໄຟລ໌',
       shortDescription: 'ເຂົ້າເຖິງໂມດູນທີ 1 ທັງໝົດ ເພື່ອສ້າງໂປຣໄຟລ໌ທີ່ມີສະເໜ່ ແລະ ປອດໄພ',
@@ -43,7 +43,7 @@ export const offerPlans: OfferPlan[] = [
     tier: 2,
     priceLak: 220000,
     priceEur: 9,
-    stripePaymentLinkDefault: 'https://buy.stripe.com/cNi8wPdzhga78ig90y1B602',
+    stripePaymentLinkDefault: 'https://buy.stripe.com/8x2eVd1QzaPN1TS2Ca1B605',
     lo: {
       name: 'ແພັກເກດທີ 2: ໂປຣໄຟລ໌ + ວິດີໂອແນະນຳຕົວ',
       shortDescription: 'ເຂົ້າເຖິງໂມດູນທີ 1 + ໂມດູນທີ 2 ເຕັກນິກຖ່າຍວິດີໂອດ້ວຍມືຖືໃຫ້ຊົງພະລັງ',
@@ -80,7 +80,7 @@ export const offerPlans: OfferPlan[] = [
     tier: 3,
     priceLak: 330000,
     priceEur: 14,
-    stripePaymentLinkDefault: 'https://buy.stripe.com/bJebJ13YH5vt9mk4Ki1B603',
+    stripePaymentLinkDefault: 'https://buy.stripe.com/14A3cv8eXbTRbusdgO1B606',
     lo: {
       name: 'ແພັກເກດທີ 3: ຄົບຊຸດ ໂປຣໄຟລ໌ + ວິດີໂອ + ເຂົ້າໃຈໜຸ່ມຝຣັ່ງ',
       shortDescription: 'ເຂົ້າເຖິງຄົບທັງ 3 ໂມດູນ ເພື່ອສ້າງຄວາມສຳພັນທີ່ມີຄຸນນະພາບ, ຍືນຍົງ ແລະ ປອດໄພ',

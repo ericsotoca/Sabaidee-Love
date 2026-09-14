@@ -164,9 +164,9 @@ export function getStripePaymentLinks(): Record<TierLevel, string> {
     console.error('Failed to load Stripe links', e);
   }
   return {
-    1: 'https://buy.stripe.com/7sY00j3YH1fdfKIb8G1B601',
-    2: 'https://buy.stripe.com/cNi8wPdzhga78ig90y1B602',
-    3: 'https://buy.stripe.com/bJebJ13YH5vt9mk4Ki1B603'
+    1: 'https://buy.stripe.com/bJebJ152Lga7gOM7Wu1B604',
+    2: 'https://buy.stripe.com/8x2eVd1QzaPN1TS2Ca1B605',
+    3: 'https://buy.stripe.com/14A3cv8eXbTRbusdgO1B606'
   };
 }
 
