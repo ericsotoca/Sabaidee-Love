@@ -188,6 +188,29 @@ export const ChapterReader: React.FC<ChapterReaderProps> = ({
         </div>
       )}
 
+      {/* 6. Quick Exercise */}
+      {activeContent.quickExercise && (
+        <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100 space-y-2.5">
+          <div className="flex items-center space-x-2 text-xs font-bold text-blue-800 uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <span>{language === 'lo' ? 'ແບບເຝິກຫັດດ່ວນ (Mini-exercice) :' : 'Mini-exercice d\'application :'}</span>
+          </div>
+          <p className="text-xs sm:text-sm text-stone-800 font-medium leading-relaxed">
+            {activeContent.quickExercise.prompt}
+          </p>
+          <div className="bg-white rounded-lg p-3 border border-stone-200 shadow-2xs">
+            <textarea
+              className="w-full text-xs sm:text-sm text-stone-700 bg-transparent border-none outline-none resize-none focus:ring-0 placeholder:text-stone-400"
+              rows={2}
+              placeholder={activeContent.quickExercise.placeholder}
+            />
+            <div className="text-[10px] text-stone-500 mt-1 border-t border-stone-100 pt-1.5 leading-normal">
+              <strong>{language === 'lo' ? 'ຄຳແນະນຳ:' : 'Guidance :'}</strong> {activeContent.quickExercise.guidance}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Bottom Completion & Navigation Controls */}
       <div className="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
         {/* Toggle completed button */}
