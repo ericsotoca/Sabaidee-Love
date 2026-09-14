@@ -167,13 +167,17 @@ export function getStripePaymentLinks(): Record<TierLevel, string> {
     const raw = localStorage.getItem(STORAGE_KEY_STRIPE_LINKS);
     if (raw) {
       const parsed = JSON.parse(raw);
-      // If the cached links contain any of the old defaults, clear the cache to use new defaults
-      const oldLinks = [
-        'https://buy.stripe.com/7sY00j3YH1fdfKIb8G1B601',
-        'https://buy.stripe.com/cNi8wPdzhga78ig90y1B602',
-        'https://buy.stripe.com/bJebJ13YH5vt9mk4Ki1B603'
-      ];
-      const hasOld = Object.values(parsed).some(val => oldLinks.includes(val as string));
+      // Extremely robust case-insensitive check to detect any old Stripe link IDs
+      const hasOld = Object.values(parsed).some(val => {
+        if (typeof val !== 'string') return false;
+        const lower = val.toLowerCase();
+        return (
+          lower.includes('7sy00') ||
+          lower.includes('cni8w') ||
+          lower.includes('bjebj13') ||
+          lower.includes('sawasdee')
+        );
+      });
       if (!hasOld) {
         return parsed;
       }

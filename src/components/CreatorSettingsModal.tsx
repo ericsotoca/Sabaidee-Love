@@ -71,6 +71,18 @@ export const CreatorSettingsModal: React.FC<CreatorSettingsModalProps> = ({
     setTimeout(() => setSavedSuccess(false), 2000);
   };
 
+  const handleRestoreDefaultStripe = () => {
+    const defaults = {
+      1: 'https://buy.stripe.com/bJebJ152Lga7gOM7Wu1B604',
+      2: 'https://buy.stripe.com/8x2eVd1QzaPN1TS2Ca1B605',
+      3: 'https://buy.stripe.com/14A3cv8eXbTRbusdgO1B606'
+    };
+    setStripeLinks(defaults);
+    saveStripePaymentLinks(defaults);
+    setSavedSuccess(true);
+    setTimeout(() => setSavedSuccess(false), 2000);
+  };
+
   const handleSaveCodes = (e: React.FormEvent) => {
     e.preventDefault();
     saveCustomCodes(customCodes);
@@ -320,17 +332,26 @@ export const CreatorSettingsModal: React.FC<CreatorSettingsModalProps> = ({
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
               <span className="text-[11px] text-stone-500">
                 Sauvegardé localement dans votre navigateur
               </span>
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center space-x-1.5 transition-colors"
-              >
-                <Save className="w-3.5 h-3.5" />
-                <span>Enregistrer les liens</span>
-              </button>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={handleRestoreDefaultStripe}
+                  className="px-3 py-2 rounded-xl border border-stone-200 hover:bg-stone-50 text-stone-700 font-semibold text-xs transition-colors"
+                >
+                  Réinitialiser
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center space-x-1.5 transition-colors"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  <span>Enregistrer les liens</span>
+                </button>
+              </div>
             </div>
           </form>
         )}
