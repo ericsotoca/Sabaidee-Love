@@ -103,7 +103,15 @@ export function getCustomCodes(): Record<TierLevel, string[]> {
   try {
     const raw = localStorage.getItem(STORAGE_KEY_CUSTOM_CODES);
     if (raw) {
-      return JSON.parse(raw);
+      const parsed = JSON.parse(raw);
+      // If the cached codes contain old Thai-related defaults, clear them to use Lao defaults
+      const hasOld = Object.values(parsed).some((list: any) => 
+        Array.isArray(list) && list.some(code => typeof code === 'string' && code.toUpperCase().includes('THAI'))
+      );
+      if (!hasOld) {
+        return parsed;
+      }
+      localStorage.removeItem(STORAGE_KEY_CUSTOM_CODES);
     }
   } catch (e) {
     console.error('Failed to load custom codes', e);
@@ -158,7 +166,18 @@ export function getStripePaymentLinks(): Record<TierLevel, string> {
   try {
     const raw = localStorage.getItem(STORAGE_KEY_STRIPE_LINKS);
     if (raw) {
-      return JSON.parse(raw);
+      const parsed = JSON.parse(raw);
+      // If the cached links contain any of the old defaults, clear the cache to use new defaults
+      const oldLinks = [
+        'https://buy.stripe.com/7sY00j3YH1fdfKIb8G1B601',
+        'https://buy.stripe.com/cNi8wPdzhga78ig90y1B602',
+        'https://buy.stripe.com/bJebJ13YH5vt9mk4Ki1B603'
+      ];
+      const hasOld = Object.values(parsed).some(val => oldLinks.includes(val as string));
+      if (!hasOld) {
+        return parsed;
+      }
+      localStorage.removeItem(STORAGE_KEY_STRIPE_LINKS);
     }
   } catch (e) {
     console.error('Failed to load Stripe links', e);
