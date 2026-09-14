@@ -1,0 +1,8 @@
+{
+  "name": "Remix Sabaidee Love - ແພລດຟອມການຮຽນຮູ້ສຳລັບຜູ້ຍິງລາວ (Guide Rencontre France-Laos)",
+  "description": "ແພລດຟອມການຮຽນຮູ້ເທິງມືຖືສຳລັບຜູ້ຍິງລາວ: ເຕັກນິກການຂຽນໂປຣໄຟລ໌, ການຖ່າຍວິດີໂອແນະນຳຕົວ ແລະ ການທຳຄວາມເຂົ້າໃຈໜຸ່ມຝຣັ່ງຢ່າງຈิงໃຈ ແລະ ປອດໄພ",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
